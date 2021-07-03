@@ -1,6 +1,6 @@
 import cors from 'cors';
 import express from 'express';
-
+import proxy from 'express-http-proxy'
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // * Routes * //
 
-var proxy = require('express-http-proxy');
+
 
 app.use('/switcher', proxy((req) => req.body.targeturl, {
   proxyReqPathResolver: function(req, res) {
@@ -31,7 +31,7 @@ app.use('/switcher', proxy((req) => req.body.targeturl, {
 // * Start * //
 
 
-
-app.listen(process.env.PORT, () =>
-  console.log(`Example app listening on port ${process.env.PORT}!`),
+const port = process.env.PORT | 5000
+app.listen(port, () =>
+  console.log(`Example app listening on port ${port}!`),
 );
