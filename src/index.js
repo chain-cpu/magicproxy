@@ -31,7 +31,7 @@ app.use('/switcher', proxy((req) => req.body.targeturl, {
 // * Start * //
 
 
-const port = process.env.PORT | 5000
+const port = 5000;
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`),
 );
