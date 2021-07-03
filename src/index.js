@@ -30,7 +30,7 @@ app.use('/switcher', proxy((req) => req.body.targeturl, {
 
 // * Start * //
 
-var port = process.env.PORT | 8080;
+let port = process.env.PORT? process.env.PORT: 8080;
 console.log("port: " + port);
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`),
