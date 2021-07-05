@@ -1,6 +1,4 @@
 import { Router } from 'express';
-import axios from 'axios'
-
 const router = Router();
 
 router.all('/', (req, res) => {
